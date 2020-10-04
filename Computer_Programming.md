@@ -1,0 +1,147 @@
+Syllabus
+===
+
+- midterm & final
+    - hand-writing test
+- ask for leave before, or will get zero when quiz be given.
+- Slides will be put on Moodle.
+
+What's 程式語言
+---
+
+`=`: assign (not **equal**)
+
+```
+a = b + c; => compiler =>   mov b,r1
+                            mov c,r2
+                            add r1,r2
+                            mov r2,a
+```
+
+Compilers:
+- Dev-C++ (We are gonna use it.)
+- Code blocks
+- Visual Studio
+
+IDE: **I**ntegrated **D**evelopment **E**nvironment
+
+First Program - Hello World
+---
+
+> **NEVER LIVE CODE**
+
+Do not use Dev-C++ 4.9.9.2, use 5.11 or later
+
+It's gcc (~~**G**NU **C** **C**ompiler~~ **G**NU **C**ompiler **C**ollection) inside the Dev-C++.
+
+Chapter 2
+===
+
+A Simple C Program: Printing a Line of Text
+---
+
+```
+#include <stdio.h>
+int main( void )
+{
+    printf( "Welcome to C!\n" );
+}
+```
+
+- `stdio`: **ST**an**D**ar **I**nput **O**utput header.
+- `.h`: **H**eader file.
+- `void` is not necessary at here.
+- `printf`: print text to standard output (Default is screen).
+- The return value of `main()` will be passed to OS.
+- `return 0;` is not necessary now, compiler will help to add it.
+
+Other special characters:
+- `//` is origined from C++, the original comment aign is `/*...*/`.
+- `#`: preprocessor
+- `\a`: alert. Produces a sound or visible alert.
+
+Why we teach / learn C ?
+---
+
+> Because most of language nowaday is base on C style. If you aquried to programming in C, you can easily switch to other languages. 
+
+Another Simple C Program: Adding Two Integers
+---
+
+```
+#include <stdio.h>
+
+int main(){
+    int i1; // Declare
+    int i2; // Declare
+
+    printf("Enter first int\n");
+    scanf("%d", &i1 );
+    
+    printf("Enter second int\n");
+    scanf("%d", &i2 );
+
+    int sum;
+    sum = i1 + i2;
+
+    printf("Sum is %d\n", sum);
+}
+```
+
+`scanf`
+- Standard input method.
+- First argument: string of **conversion specifiers**. 
+- Second argument: an **address** for put the value that user entered. Use `&` (**address operator**) to get the address of a variable.
+- `scanf` was declared **unsafe** now. ([ref.]())
+
+Conversion specifiers ([ref.](https://flaviocopes.com/c-conversion-specifiers/)):
+- `%d`: in decimal interger.
+- `%b`: in binary.
+- `%x`: in hexadecimal.
+- `%g`: float number in decimal format or exponential format depending on the value. (Double numbers should use `%lg`)
+
+The newer C allow users to declare variable **anywhere** before using it, while old C asks users to declare variable at the start of the function.
+
+Datatypes with their length:
+|Datatype   |Length (in byte)           |
+|-----------|---------------------------|
+|char       |1                          |
+|short      |2                          |
+|int        |4                          |
+|long       |4,8 (Depends on compiler)  |
+|longlong   |8                          |
+|float      |4                          |
+|double     |8                          |
+
+> ref. The IEEE Standard for Floating-Point Arithmetic (IEEE 754) ([en](https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/) [ch](https://zh.wikipedia.org/wiki/IEEE_754))
+
+ASCII: **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange
+
+`==` take precedence over `=`.
+
+Chapter 3
+Structured Program Development in C
+===
+
+Algorithms
+---
+
+An algorithm is a **procedure** for solving a problem in terms of the **actions** to be executed, and the **order** in which these actions are to be executed.
+
+Control Structures
+---
+
+Begin/End Symbol: oval
+Connector Symbol: circle
+
+C has only seven control statements,including one sequence structure, three selection structure, and three repetition structure. All of them are single-entry/single-exit.
+
+|Structure  |syntax         |
+|-----------|---------------|
+|Sequence   |action states  |
+|Selection  |if             |
+|           |if ... else    |
+|           |switch         |
+|repetition |for            |
+|           |while          |
+|           |do ... while   |
