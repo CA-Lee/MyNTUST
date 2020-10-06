@@ -131,7 +131,7 @@ An algorithm is a **procedure** for solving a problem in terms of the **actions*
 Control Structures
 ---
 
-Begin/End Symbol: oval
+Begin/End Symbol: oval  
 Connector Symbol: circle
 
 C has only seven control statements,including one sequence structure, three selection structure, and three repetition structure. All of them are single-entry/single-exit.
@@ -185,3 +185,9 @@ Format String
 - 最多兩人一組
 - 期中後公布
 - 寫程式
+
+How to enter the `EOF`
+===
+
+Windows systems: `Ctrl + z`  
+UNIX-like systems: `Ctrl + d`
