@@ -145,3 +145,36 @@ C has only seven control statements,including one sequence structure, three sele
 | repetition | for           |
 |            | while         |
 |            | do ... while  |
+
+Format String
+===
+
+> ref. https://en.wikipedia.org/wiki/Printf_format_string#Format_placeholder_specification
+
+```
+%[parameter][flags][width][.precision][length]type
+```
+
+**Parameter**
+- `n$` : *n* is a number, in order to select the *n*th argument after the format string.
+
+**Flags**
+- `-` : left-align the output.
+- `+` : show the positive sign or negative sign in front of number.
+- `(space)` : Prepends a space for positive signed-numeric types.
+- `0` : use `0` instead of `(space)` to fill the width.
+- `'` : apply the thousand grouping separator.
+- `#`
+  - For `g` and `G` : preserve trailing zeros.
+  - For `f`, `F`, `e`, `E`, `g`, `G` : the output always contains a decimal point.
+  - For `o`, `x`, `X` : prepended `0`, `0x`, `0X`, respectively, to non-zero numbers.
+
+> Allow multiple flags in one format string.
+
+**Width**
+
+**Precision**
+
+**Length**
+
+**Type**
