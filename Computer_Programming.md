@@ -103,15 +103,15 @@ Conversion specifiers ([ref.](https://flaviocopes.com/c-conversion-specifiers/))
 The newer C allow users to declare variable **anywhere** before using it, while old C asks users to declare variable at the start of the function.
 
 Datatypes with their length:
-|Datatype   |Length (in byte)           |
-|-----------|---------------------------|
-|char       |1                          |
-|short      |2                          |
-|int        |4                          |
-|long       |4,8 (Depends on compiler)  |
-|longlong   |8                          |
-|float      |4                          |
-|double     |8                          |
+| Datatype | Length (in byte)          |
+| -------- | ------------------------- |
+| char     | 1                         |
+| short    | 2                         |
+| int      | 4                         |
+| long     | 4,8 (Depends on compiler) |
+| longlong | 8                         |
+| float    | 4                         |
+| double   | 8                         |
 
 > ref. The IEEE Standard for Floating-Point Arithmetic (IEEE 754) ([en](https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/) [ch](https://zh.wikipedia.org/wiki/IEEE_754))
 
@@ -136,12 +136,12 @@ Connector Symbol: circle
 
 C has only seven control statements,including one sequence structure, three selection structure, and three repetition structure. All of them are single-entry/single-exit.
 
-|Structure  |syntax         |
-|-----------|---------------|
-|Sequence   |action states  |
-|Selection  |if             |
-|           |if ... else    |
-|           |switch         |
-|repetition |for            |
-|           |while          |
-|           |do ... while   |
+| Structure  | syntax        |
+| ---------- | ------------- |
+| Sequence   | action states |
+| Selection  | if            |
+|            | if ... else   |
+|            | switch        |
+| repetition | for           |
+|            | while         |
+|            | do ... while  |
