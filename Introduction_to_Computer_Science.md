@@ -68,6 +68,16 @@ Compare to NCTU
 ---
 
 > 系上學程制度不存在
+
+Why NTUST CSIE ?
+---
+
+- 近年新創多與資訊技術相關
+  - 初始成本低
+- 多業界合作機會
+  - Nokia 專案
+    - 學長曾幫 Nokia 做過雙平台 APP
+
 ***
 
 How to make a coffee
