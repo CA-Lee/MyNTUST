@@ -142,3 +142,13 @@ Sabbatical Year
 - 量化（Quantization）
     - 訊號的水平切割
     - 會造成訊號失真
+
+***
+
+DRAM vs. SRAM
+---
+
+|             | DRAM | SRAM |
+| ----------- | ---- | ---- |
+| Performance |      | Win  |
+| Layout size | Win  |      |
