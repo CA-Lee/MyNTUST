@@ -200,3 +200,11 @@ Why not use 2'補數 in sign bit
 - 錯誤偵測碼（parity bit）
   - 受到干擾，造成資料出錯
   - 多傳錯誤檢查碼
+
+作業
+===
+
+1. Given *a* as a floating-point represented number.
+2. *a* /= 3
+3. *a* \*= 3
+4. Does *a* equal 1 ? Why ?
