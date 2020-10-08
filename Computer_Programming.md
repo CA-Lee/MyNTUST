@@ -194,3 +194,23 @@ How to enter the `EOF`
 
 Windows systems: `Ctrl + z`  
 UNIX-like systems: `Ctrl + d`
+
+ASCII of frequent used constants
+===
+
+> ref. https://www.ascii-code.com/  
+> ref. https://en.wikipedia.org/wiki/Control_character
+
+> `EOF` is not an ASCII. It's a return value of `scanf()` , it actually is -1.  
+> ref. https://stackoverflow.com/questions/7622699/what-is-the-ascii-value-of-eof-in-c  
+> ref. https://en.wikipedia.org/wiki/End-of-file
+
+- `0` : 48, 0x30.
+- `A` : 65, 0x41.
+- `a` : 97, 0x61.
+- `\n` : newline, aka. `LF` , 10, 0xA.
+- `\r` : return to start of line, aka. `CR` , 13, 0x0D.
+- `\b` : move the cursor backward, aka. `BS` , 8, 0x8.
+- `\0` : null, the end character of string, aka. `NUL` , 0, 0x0.
+- `\t` : tab, aka. `HT` , 9, 0x9.
+- `\a` : **MAKE NOISES** , aka. `BEL` , 7, 0x7.
