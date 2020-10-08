@@ -154,6 +154,7 @@ Format String
 ```
 %[parameter][flags][width][.precision][length]type
 ```
+> For `printf()` function, if you replace the *width* and / or the *precision* number by a `*` , then you must specify the number at the next argument.
 
 **Parameter**
 - `n$` : *n* is a number, in order to select the *n*th argument after the format string.
@@ -172,6 +173,8 @@ Format String
 > Allow multiple flags in one format string.
 
 **Width**
+
+- `n` : *n* is a number, specific the **minimum** width of the output.
 
 **Precision**
 
