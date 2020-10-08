@@ -152,3 +152,8 @@ DRAM vs. SRAM
 | ----------- | ---- | ---- |
 | Performance |      | Win  |
 | Layout size | Win  |      |
+
+Why use R, G, and B ?
+===
+
+因為人類肉眼感光細胞有三種，分別對紅、綠、藍光最敏感。
