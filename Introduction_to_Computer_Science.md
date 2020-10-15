@@ -208,3 +208,19 @@ Why not use 2'補數 in sign bit
 2. *a* /= 3
 3. *a* \*= 3
 4. Does *a* equal 1 ? Why ?
+
+***
+
+Entropy
+===
+
+- $H(a)=-\sum _{i=1} ^n P(A _i) \log _2 P(A _i)$
+- $H(a) \le Huffman\ Average\ Length \le H(a)+1$
+
+JPEG
+---
+
+> A standard last 28 years without be modified
+
+- Why?
+  - low cost of eletricity
