@@ -114,7 +114,7 @@ Sabbatical Year
 ***
 
 傅立葉轉換
----
+===
 
 - Fourier transform
     - $\begin{aligned}
@@ -146,7 +146,7 @@ Sabbatical Year
 ***
 
 DRAM vs. SRAM
----
+===
 
 |             | DRAM | SRAM |
 | ----------- | ---- | ---- |
