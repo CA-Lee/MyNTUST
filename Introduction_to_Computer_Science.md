@@ -246,3 +246,55 @@ AI 研究中心系列講座
   - Grindr CTO/President
   - 台科大工智慧研究中心執行長
   - 加州理工大學電機博士
+
+網路
+===
+
+Scope
+---
+
+- LAN
+- MAN
+  - 城市網路
+- WAN
+  - 整個網路世界
+
+Ownership
+---
+
+- Close: 軍網、企業內網
+
+CSMA
+---
+
+- Carrier Sense Multiple Access
+- 載波偵聽多路存取
+- 使用最適合的頻率
+- CD
+  - Collision Detection
+  - 發生碰撞後等待隨機長度時間再重新發送
+- CA
+  - Collision Avoidance
+  - Use in Wi-Fi
+  - The hidden terminal problem
+    - 監聽對象被擋住，誤以為沒人在傳訊息
+  - 等待隨機時間
+  - 確認連線(handshake)
+  - if no reponse
+    - 再等待隨機時間後重送
+    - 每次的隨機時間會拉長
+
+Inter-process Communication
+---
+
+- Clien/Server
+- Peer-to-peer (P2P)
+  - 如何穿透 NAT
+    - 由 Server 提供連線
+
+The Internet
+---
+- 商機
+  - IP 太難記
+  - Domain name 出現
+  - [Top expansive domain](https://www.godaddy.com/garage/the-top-20-most-expensive-domain-names/)
