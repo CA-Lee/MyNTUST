@@ -224,3 +224,25 @@ JPEG
 
 - Why?
   - low cost of eletricity
+
+***
+
+AI 研究中心系列講座
+===
+
+講師
+---
+
+- 翁竟智博士
+  - Stripe 亞太區 CTO
+  - 加州理工大學博士
+- 蕭文翔
+  - 哥倫比亞大學電機碩士
+  - Touch of Modern 增長產品經理
+- 何婕
+- 張伯群
+- 陳俊仰博士
+  - 教授老同學
+  - Grindr CTO/President
+  - 台科大工智慧研究中心執行長
+  - 加州理工大學電機博士
