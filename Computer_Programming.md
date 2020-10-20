@@ -182,6 +182,8 @@ Format String
 
 **Type**
 
+- `%c` in scanf() will cause `enter` problem.
+
 期末專題
 ===
 
