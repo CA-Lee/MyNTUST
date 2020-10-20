@@ -214,3 +214,40 @@ ASCII of frequent used constants
 - `\0` : null, the end character of string, aka. `NUL` , 0, 0x0.
 - `\t` : tab, aka. `HT` , 9, 0x9.
 - `\a` : **MAKE NOISES** , aka. `BEL` , 7, 0x7.
+
+Storage Classes
+===
+
+Use before variable declaration.
+
+```
+[specifiers] [type] [name] ;
+```
+`type`: `int`, `double` and so on...
+`name`: Name of a variable
+
+- `auto`
+  - The default.
+  - Create when: be defined
+  - Exist when: in block (`{}`)
+  - Destroy on: exit block
+- `register`
+  - Store the value in computer registers
+  - Automatic initialize to 1
+  - If no register available, compiler may ignore it.
+- `extern`
+  - *Let a variable globalize*
+  - Mean this variable is declared otherwhere.
+  - Local variable should be declared with `static`
+  - Global variable have `extern` by default.
+- `static`
+  - The initializer in declaration only execute once before teminating.
+  - Create when: before program begin
+  - Exist when: in block (`{}`)
+  - Destroy on: program terminated
+
+Don't use global variable
+---
+
+- 造成記憶體整理困難
+- 程式會變得沒有組織
