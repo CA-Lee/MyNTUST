@@ -273,3 +273,15 @@ Fibonacci series
 ---
 
 `F(n)` will call about $2^n - 1$ times of `F()`
+
+Array
+===
+
+Declaration
+---
+
+- If the number of elements in the array initialize block is less than the size of array, program will automatic set the indeclared elements as `0` .
+  - `int n[5] = {0}`
+    - result in `{ 0, 0, 0, 0, 0}`
+  - `int n[5] = {1}`
+    - result in `{ 1, 0, 0, 0, 0}`
