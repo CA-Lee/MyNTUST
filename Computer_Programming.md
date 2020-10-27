@@ -174,11 +174,23 @@ Format String
 
 **Width**
 
-- `n` : *n* is a number, specific the **minimum** width of the output.
+- `n` : *n* is a number, specifies the **minimum** width of the output.
 
 **Precision**
 
+- `n`
+  - For floating point numeric types: specifies the number of digits right of the decimal point.
+  - For others: specifies the **maximum** width of the output.
+
 **Length**
+
+- `hh` : a `char` size integer.
+- `h` : a `short` size integer.
+- `l`
+  - For integers: a `long` size integer.
+  - For floating points: a `double` size argument.
+- `ll` : a `long long` size integer.
+- `L` : a `long double` size argument.
 
 **Type**
 
