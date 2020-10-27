@@ -265,3 +265,11 @@ Avoid to use global variable
 
 - 造成記憶體整理困難
 - 程式會變得沒有組織
+
+Recursive
+===
+
+Fibonacci series
+---
+
+`F(n)` will call about $2^n - 1$ times of `F()`
