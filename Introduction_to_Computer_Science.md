@@ -298,3 +298,16 @@ The Internet
   - IP 太難記
   - Domain name 出現
   - [Top expansive domain](https://www.godaddy.com/garage/the-top-20-most-expensive-domain-names/)
+
+FDMA、TDMA、CDMA
+---
+
+- 底層無線技術
+- **F**requency **D**ivision **M**ultiple **A**ccess
+  - 依頻帶分隔流量
+- **T**ime **D**ivision **M**ultiple **A**ccess
+  - 依時間分隔流量（輪流使用）
+- **C**ode **D**ivision **M**ultiple **A**ccess
+  - 依編碼方式分隔流量
+  - 軍事上可以防止竊聽（不知道編碼無法解譯）
+  - 3G 後主要使用此種模式
