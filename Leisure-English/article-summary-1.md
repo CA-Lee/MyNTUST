@@ -1,4 +1,6 @@
-[Link](https://qz.com/1911718/how-among-us-became-a-global-video-game-phenomenon/)
+[Link1](https://qz.com/1911718/how-among-us-became-a-global-video-game-phenomenon/)
+[Link2](https://comicyears.com/gaming/the-history-of-among-us-2020s-surprise-hit/)
+[Link3](http://www.innersloth.com/gameAmongUs.php)
 
 Has almost no players a few months ago, *Among Us*, has been download more than 100 million times, according to its developer, InnerSloth.
 
