@@ -248,7 +248,7 @@ Use before variable declaration.
   - Exist when: in block (`{}`)
   - Destroy on: program terminated
 
-Don't use global variable
+Avoid to use global variable
 ---
 
 - 造成記憶體整理困難
