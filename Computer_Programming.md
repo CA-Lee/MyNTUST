@@ -259,6 +259,7 @@ Use before variable declaration.
   - Create when: before program begin
   - Exist when: in block (`{}`)
   - Destroy on: program terminated
+  - Static array will be initialized to 0 by default.
 
 Avoid to use global variable
 ---
