@@ -103,15 +103,15 @@ Conversion specifiers ([ref.](https://flaviocopes.com/c-conversion-specifiers/))
 The newer C allow users to declare variable **anywhere** before using it, while old C asks users to declare variable at the start of the function.
 
 Datatypes with their length:
-| Datatype | Length (in byte)          |
-| -------- | ------------------------- |
-| char     | 1                         |
-| short    | 2                         |
-| int      | 4                         |
-| long     | 4,8 (Depends on compiler) |
-| longlong | 8                         |
-| float    | 4                         |
-| double   | 8                         |
+| Datatype  | Length (in byte)          |
+| --------- | ------------------------- |
+| char      | 1                         |
+| short     | 2                         |
+| int       | 4                         |
+| long      | 4,8 (Depends on compiler) |
+| long long | 8                         |
+| float     | 4                         |
+| double    | 8                         |
 
 > ref. The IEEE Standard for Floating-Point Arithmetic (IEEE 754) ([en](https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/) [ch](https://zh.wikipedia.org/wiki/IEEE_754))
 
@@ -286,6 +286,7 @@ Declaration
     - result in `{ 0, 0, 0, 0, 0}`
   - `int n[5] = {1}`
     - result in `{ 1, 0, 0, 0, 0}`
+- While passing a multidimension array into a function, you should specific the width of each dimension except the first.
 
 Midterm
 ===
@@ -293,3 +294,8 @@ Midterm
 - 可以帶一張 A4 手寫筆記
 - 交卷才能出去上廁所
 - 考 7 - 10 題
+
+Pointer
+===
+
+- May be initialized to `NULL` (preffered) , `0`, or an address.
