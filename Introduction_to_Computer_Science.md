@@ -389,3 +389,21 @@ FDMA、TDMA、CDMA
 ](https://hulitw.medium.com/learning-tcp-ip-http-via-sending-letter-5d3299203660)
 - ![](https://i.imgur.com/yVvsOVc.jpg)
 - ![](https://i.imgur.com/ZXjjRqL.png)
+
+***
+
+Anomaly Detection (Auto-Encoder)
+===
+
+- Probably problem
+    - Lack of problem sample
+- Solution
+    - How Stanford collect samples
+        - randomly collect from Internet
+        - cloud sourcing
+    - problem
+        - 人工智慧描述（reconstruct）出 NG 的樣本（無中生有），導致比對時比不出差異，無法檢測出錯誤。
+        - 做太好取代人工，導致失業率提高
+- Adventage
+    - Same standards
+    - Won't be tired
