@@ -306,3 +306,17 @@ Pointer
   a += 2;
   // a == 1234 + 4 * 2
   ```
+
+Function pointer
+---
+
+- declaration
+  - `return_type (*function_name)(arguments);`
+  - eg. `void (*func)(int);`
+- Usage
+  - assign an address of a function to a function pointer.
+    - no trailing `()`;
+    - eg. `func = real_function;`
+  - Use it.
+    - arguments must match.
+    - eg. `func(5); //equal to real_function(5)`
