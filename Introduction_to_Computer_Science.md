@@ -375,3 +375,35 @@ FDMA、TDMA、CDMA
 - 期中前不甩老師複習，坐最後一排桌子向後轉自己讀自己的
 - 很負責，自我規劃進度還超前
 - 知道自己在幹嘛，有毅力且有決心
+
+***
+
+期中複習
+===
+
+- ICANN
+    - https://ithelp.ithome.com.tw/articles/10239485
+- ISP 
+    - https://ithelp.ithome.com.tw/articles/10240232
+- [從傳紙條輕鬆學習基本網路概念
+](https://hulitw.medium.com/learning-tcp-ip-http-via-sending-letter-5d3299203660)
+- ![](https://i.imgur.com/yVvsOVc.jpg)
+- ![](https://i.imgur.com/ZXjjRqL.png)
+
+***
+
+Anomaly Detection (Auto-Encoder)
+===
+
+- Probably problem
+    - Lack of problem sample
+- Solution
+    - How Stanford collect samples
+        - randomly collect from Internet
+        - cloud sourcing
+    - problem
+        - 人工智慧描述（reconstruct）出 NG 的樣本（無中生有），導致比對時比不出差異，無法檢測出錯誤。
+        - 做太好取代人工，導致失業率提高
+- Adventage
+    - Same standards
+    - Won't be tired
