@@ -299,3 +299,10 @@ Pointer
 ===
 
 - May be initialized to `NULL` (preffered) , `0`, or an address.
+- The name of an array such like `a` of `int a[5];` is a constant pointer such like `int * const a;` .
+- Computing in pointer is using the size of element as a unit.
+  ```
+  int * a = 1234;
+  a += 2;
+  // a == 1234 + 4 * 2
+  ```
