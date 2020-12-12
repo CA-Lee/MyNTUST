@@ -320,3 +320,13 @@ Function pointer
   - Use it.
     - arguments must match.
     - eg. `func(5); //equal to real_function(5)`
+
+Characters and Strings
+===
+
+- <ctype.h>
+  - `isXXX()` function
+- <stdlib.h>
+  - strtod: string to double
+  - strtol: string to long
+  - strtoul: string to unsigned long
