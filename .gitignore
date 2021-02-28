@@ -1,0 +1,13 @@
+# vs2019
+OOP/**/*.exe*
+OOP/**/*.ilk
+OOP/**/*.sln
+OOP/**/*.docx
+OOP/**/*.vcxproj*
+OOP/**/*.obj
+OOP/**/*.log
+OOP/**/*.idb
+OOP/**/*.pdb
+OOP/**/*.tlog
+OOP/**/*.lastbuildstate
+OOP/**/.vs/
