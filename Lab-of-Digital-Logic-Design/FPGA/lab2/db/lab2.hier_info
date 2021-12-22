@@ -1,0 +1,23 @@
+|lab2
+sw[0] => led[0].DATAIN
+sw[1] => led[1].DATAIN
+sw[2] => led[2].DATAIN
+sw[3] => led[3].DATAIN
+sw[4] => led[4].DATAIN
+sw[5] => led[5].DATAIN
+sw[6] => led[6].DATAIN
+sw[7] => led[7].DATAIN
+sw[8] => led[8].DATAIN
+sw[9] => led[9].DATAIN
+led[0] << sw[0].DB_MAX_OUTPUT_PORT_TYPE
+led[1] << sw[1].DB_MAX_OUTPUT_PORT_TYPE
+led[2] << sw[2].DB_MAX_OUTPUT_PORT_TYPE
+led[3] << sw[3].DB_MAX_OUTPUT_PORT_TYPE
+led[4] << sw[4].DB_MAX_OUTPUT_PORT_TYPE
+led[5] << sw[5].DB_MAX_OUTPUT_PORT_TYPE
+led[6] << sw[6].DB_MAX_OUTPUT_PORT_TYPE
+led[7] << sw[7].DB_MAX_OUTPUT_PORT_TYPE
+led[8] << sw[8].DB_MAX_OUTPUT_PORT_TYPE
+led[9] << sw[9].DB_MAX_OUTPUT_PORT_TYPE
+
+

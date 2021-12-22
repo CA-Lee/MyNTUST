@@ -1,0 +1,180 @@
+|lab3
+sw[0] => sw[0].IN1
+sw[1] => sw[1].IN1
+sw[2] => sw[2].IN1
+sw[3] => sw[3].IN1
+sw[4] => sw[4].IN1
+sw[5] => sw[5].IN1
+sw[6] => sw[6].IN1
+sw[7] => sw[7].IN1
+sw[8] => sw[8].IN1
+sw[9] => sw[9].IN1
+seg7[0] << bin2dec:b2d.port1
+seg7[1] << bin2dec:b2d.port1
+seg7[2] << bin2dec:b2d.port1
+seg7[3] << bin2dec:b2d.port1
+seg7[4] << bin2dec:b2d.port1
+seg7[5] << bin2dec:b2d.port1
+seg7[6] << bin2dec:b2d.port1
+seg7[7] << bin2dec:b2d.port1
+seg7[8] << bin2dec:b2d.port1
+seg7[9] << bin2dec:b2d.port1
+seg7[10] << bin2dec:b2d.port1
+seg7[11] << bin2dec:b2d.port1
+seg7[12] << bin2dec:b2d.port1
+seg7[13] << bin2dec:b2d.port1
+seg7[14] << bin2dec:b2d.port1
+seg7[15] << bin2dec:b2d.port1
+seg7[16] << bin2dec:b2d.port1
+seg7[17] << bin2dec:b2d.port1
+seg7[18] << bin2dec:b2d.port1
+seg7[19] << bin2dec:b2d.port1
+seg7[20] << bin2dec:b2d.port1
+seg7[21] << bin2dec:b2d.port1
+seg7[22] << bin2dec:b2d.port1
+seg7[23] << bin2dec:b2d.port1
+seg7[24] << bin2dec:b2d.port1
+seg7[25] << bin2dec:b2d.port1
+seg7[26] << bin2dec:b2d.port1
+seg7[27] << bin2dec:b2d.port1
+seg7[28] << bin2dec:b2d.port1
+seg7[29] << bin2dec:b2d.port1
+seg7[30] << bin2dec:b2d.port1
+seg7[31] << bin2dec:b2d.port1
+
+
+|lab3|bin2dec:b2d
+sw[0] => Div0.IN19
+sw[0] => Mod0.IN19
+sw[0] => Mod1.IN16
+sw[0] => Mod2.IN13
+sw[1] => Div0.IN18
+sw[1] => Mod0.IN18
+sw[1] => Mod1.IN15
+sw[1] => Mod2.IN12
+sw[2] => Div0.IN17
+sw[2] => Mod0.IN17
+sw[2] => Mod1.IN14
+sw[2] => Mod2.IN11
+sw[3] => Div0.IN16
+sw[3] => Mod0.IN16
+sw[3] => Mod1.IN13
+sw[3] => Mod2.IN10
+sw[4] => Div0.IN15
+sw[4] => Mod0.IN15
+sw[4] => Mod1.IN12
+sw[4] => Mod2.IN9
+sw[5] => Div0.IN14
+sw[5] => Mod0.IN14
+sw[5] => Mod1.IN11
+sw[5] => Mod2.IN8
+sw[6] => Div0.IN13
+sw[6] => Mod0.IN13
+sw[6] => Mod1.IN10
+sw[6] => Mod2.IN7
+sw[7] => Div0.IN12
+sw[7] => Mod0.IN12
+sw[7] => Mod1.IN9
+sw[7] => Mod2.IN6
+sw[8] => Div0.IN11
+sw[8] => Mod0.IN11
+sw[8] => Mod1.IN8
+sw[8] => Mod2.IN5
+sw[9] => Div0.IN10
+sw[9] => Mod0.IN10
+sw[9] => Mod1.IN7
+sw[9] => Mod2.IN4
+seg7[0] <= seg7decode:s0.port1
+seg7[1] <= seg7decode:s0.port1
+seg7[2] <= seg7decode:s0.port1
+seg7[3] <= seg7decode:s0.port1
+seg7[4] <= seg7decode:s0.port1
+seg7[5] <= seg7decode:s0.port1
+seg7[6] <= seg7decode:s0.port1
+seg7[7] <= seg7decode:s0.port1
+seg7[8] <= seg7decode:s1.port1
+seg7[9] <= seg7decode:s1.port1
+seg7[10] <= seg7decode:s1.port1
+seg7[11] <= seg7decode:s1.port1
+seg7[12] <= seg7decode:s1.port1
+seg7[13] <= seg7decode:s1.port1
+seg7[14] <= seg7decode:s1.port1
+seg7[15] <= seg7decode:s1.port1
+seg7[16] <= seg7decode:s2.port1
+seg7[17] <= seg7decode:s2.port1
+seg7[18] <= seg7decode:s2.port1
+seg7[19] <= seg7decode:s2.port1
+seg7[20] <= seg7decode:s2.port1
+seg7[21] <= seg7decode:s2.port1
+seg7[22] <= seg7decode:s2.port1
+seg7[23] <= seg7decode:s2.port1
+seg7[24] <= seg7decode:s3.port1
+seg7[25] <= seg7decode:s3.port1
+seg7[26] <= seg7decode:s3.port1
+seg7[27] <= seg7decode:s3.port1
+seg7[28] <= seg7decode:s3.port1
+seg7[29] <= seg7decode:s3.port1
+seg7[30] <= seg7decode:s3.port1
+seg7[31] <= seg7decode:s3.port1
+
+
+|lab3|bin2dec:b2d|seg7decode:s0
+n[0] => Decoder0.IN3
+n[1] => Decoder0.IN2
+n[2] => Decoder0.IN1
+n[3] => Decoder0.IN0
+seg7[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg7[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg7[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg7[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg7[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg7[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg7[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg7[7] <= <VCC>
+
+
+|lab3|bin2dec:b2d|seg7decode:s1
+n[0] => Decoder0.IN3
+n[1] => Decoder0.IN2
+n[2] => Decoder0.IN1
+n[3] => Decoder0.IN0
+seg7[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg7[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg7[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg7[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg7[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg7[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg7[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg7[7] <= <VCC>
+
+
+|lab3|bin2dec:b2d|seg7decode:s2
+n[0] => Decoder0.IN3
+n[1] => Decoder0.IN2
+n[2] => Decoder0.IN1
+n[3] => Decoder0.IN0
+seg7[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg7[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg7[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg7[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg7[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg7[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg7[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg7[7] <= <VCC>
+
+
+|lab3|bin2dec:b2d|seg7decode:s3
+n[0] => Decoder0.IN3
+n[1] => Decoder0.IN2
+n[2] => Decoder0.IN1
+n[3] => Decoder0.IN0
+seg7[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg7[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg7[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg7[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg7[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg7[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg7[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg7[7] <= <VCC>
+
+

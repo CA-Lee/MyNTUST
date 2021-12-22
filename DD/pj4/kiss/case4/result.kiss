@@ -1,0 +1,15 @@
+.start_kiss
+.i 2
+.o 1
+.p 8
+.s 2
+.r S1
+00 S1 S1 0
+01 S1 S2 1
+10 S1 S1 0
+11 S1 S2 0
+00 S2 S1 1
+01 S2 S2 0
+10 S2 S1 1
+11 S2 S2 1
+.end_kiss

@@ -1,0 +1,25 @@
+|lab1
+pin_name13 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+pin_name1 => inst.IN0
+pin_name14 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+pin_name2 => inst1.IN0
+pin_name15 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+pin_name3 => inst2.IN0
+pin_name16 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+pin_name4 => inst3.IN0
+pin_name17 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+pin_name5 => inst4.IN0
+pin_name18 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+pin_name6 => inst5.IN0
+pin_name19 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+pin_name7 => inst6.IN0
+pin_name20 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+pin_name8 => inst7.IN0
+pin_name21 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+pin_name9 => inst8.IN0
+pin_name22 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+pin_name10 => inst9.IN0
+pin_name23 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+pin_name11 => inst10.IN0
+
+
