@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.svm import SVC
+from sklearn.svm import SVC, LinearSVC
 
 # prepare data #
 
@@ -67,8 +67,8 @@ def prepare_x(df: pd.DataFrame):
 train_x = prepare_x(adult_data)
 train_y = adult_data[output].transpose().iloc[0]  # reshape from n*1 to 1d
 
-print(train_x)
-print(train_y)
+# print(train_x)
+# print(train_y)
 
 adult_svm = SVC()
 adult_svm.fit(X=train_x, y=train_y)  # train svm
@@ -76,15 +76,19 @@ adult_svm.fit(X=train_x, y=train_y)  # train svm
 # prepare test data
 
 test_x = prepare_x(adult_test)
-test_y = adult_test[output].transpose().iloc[0]  # reshape from n*1 to 1d
+test_y = adult_test[output].transpose().iloc[0].to_numpy()  # reshape from n*1 to 1d
 
-print(test_x)
-print(test_y)
+# print(test_x)
+# print(test_y)
 
-accuracy_origin = accuracy_score(
-    y_true=train_y,
-    y_pred=adult_svm.predict(train_x),
-)
+# print(type(test_y))
+
+y_pred = adult_svm.predict(test_x)
+
+# print(y_pred)
+# print(type(y_pred))
+
+accuracy_origin = accuracy_score(y_true=test_y, y_pred=y_pred)
 
 print(f"{accuracy_origin=}")
 
