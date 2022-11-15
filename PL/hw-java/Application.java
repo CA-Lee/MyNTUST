@@ -47,7 +47,7 @@ public class Application {
 
             /* put your own tests here ....... */
 
-            // comprehensive test of Account
+            // comprehensive test of CheckingAccount
 
             // test minimum balance
             try {
@@ -125,9 +125,16 @@ public class Application {
 
             // withdraw
             savingAccount.withdraw(100);
-            if (savingAccount.balance() != 999) {
+            if (savingAccount.balance() != 1000) {
                 testPassed = false;
             }
+            savingAccount.withdraw(100);
+            savingAccount.withdraw(100);
+            if (savingAccount.balance() != 799) {
+                testPassed = false;
+            }
+
+            System.out.println(savingAccount.balance());
 
             try {
                 savingAccount.withdraw(99999);
@@ -166,6 +173,74 @@ public class Application {
                 testPassed = false;
             }
 
+            // comprehensive test of SavingAccount
+            Account cDAccount = new CDAccount("cDAccount", 1000, YEARLY_INTEREST_RATE, today, 360);
+
+            // deposit
+            try {
+                cDAccount.deposit(100);
+                testPassed = false;
+            } catch (Exception e) {
+            }
+
+            // withdraw
+            cDAccount.withdraw(100);
+            if (cDAccount.balance() != 650) {
+                testPassed = false;
+            }
+
+            try {
+                cDAccount.withdraw(99999);
+                testPassed = false;
+            } catch (Exception e) {
+            }
+
+            ((CDAccount) cDAccount).withdraw(100, new Date(today.getTime() + (long) 1000
+                    * 60 * 60 * 24 * 400));
+            if (cDAccount.balance() != 550) {
+                testPassed = false;
+            }
+
+            // compute_interest
+            interestDate.setTime(today.getTime() + (long) (1000 * 60 * 60 * 24) * 31);
+
+            // test w/ default openDate
+            beforeBalance = cDAccount.balance();
+
+            if (beforeBalance != cDAccount.computeInterest()) {
+                testPassed = false;
+            }
+
+            if (cDAccount.computeInterest(interestDate) != beforeBalance * (1 + YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            // test w/ specified openDate
+            firstDate.setTime(today.getTime() - (long) 1000 * 60 * 60 * 24 * 31);
+            Account cdAccount2 = new CDAccount("cdAccount2", 1000,
+                    YEARLY_INTEREST_RATE,
+                    firstDate, 360);
+            beforeBalance = cdAccount2.balance();
+            if (cdAccount2.computeInterest() != beforeBalance * (1 +
+                    YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            if (cdAccount2.computeInterest(interestDate) != beforeBalance * (1 + YEARLY_INTEREST_RATE / 12)
+                    * (1 + YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            Account cdAccount3 = new CDAccount("cdAccount3", 1000,
+                    YEARLY_INTEREST_RATE,
+                    today, 360);
+            interestDate.setTime(today.getTime() + (long) (1000 * 60 * 60 * 24) * 400);
+            beforeBalance = cdAccount3.balance();
+
+            if (cdAccount3.computeInterest(interestDate) != beforeBalance * (1 + YEARLY_INTEREST_RATE / 12 * 12)) {
+                testPassed = false;
+            }
+
             /**********************/
             // comprehensive test of ...
 
@@ -182,7 +257,7 @@ public class Application {
             ArrayList<Class<? extends Account>> accountClassList = new ArrayList<Class<? extends Account>>();
             accountClassList.add(CheckingAccount.class);
             accountClassList.add(SavingAccount.class);
-            // accountClassList.add(Account.class);
+            accountClassList.add(CDAccount.class);
             // accountClassList.add(Account.class);
 
             for (Class<? extends Account> cls : accountClassList) {
@@ -229,7 +304,9 @@ public class Application {
             // newBalance + " balance\n");
             // }
 
-        } catch (Exception e) {
+        } catch (
+
+        Exception e) {
             stdExceptionPrinting(e, 195);
             testPassed = false;
         } finally {
