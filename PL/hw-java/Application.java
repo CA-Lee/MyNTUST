@@ -19,7 +19,7 @@ public class Application {
     public static void main(String args[]) {
         final double YEARLY_INTEREST_RATE = 0.12;
         Account checkingAccount;
-        // Date d;
+        Date today = new Date();
         double ret;
         boolean testPassed = true;
         try {
@@ -47,11 +47,11 @@ public class Application {
 
             /* put your own tests here ....... */
 
-            // comprehensive test of CheckingAccount
+            // comprehensive test of Account
 
             // test minimum balance
             try {
-                CheckingAccount checkingAccountFewDeposit = new CheckingAccount(
+                Account checkingAccountFewDeposit = new CheckingAccount(
                         "checkingAccountFewDeposit", 100,
                         YEARLY_INTEREST_RATE);
                 testPassed = false;
@@ -59,18 +59,8 @@ public class Application {
             } catch (Exception e) {
             }
 
-            CheckingAccount checkingAccount2 = new CheckingAccount(
+            Account checkingAccount2 = new CheckingAccount(
                     "checkingAccount2", 1000, YEARLY_INTEREST_RATE);
-
-            // name
-            if (checkingAccount2.name() != "checkingAccount2") {
-                testPassed = false;
-            }
-
-            // balance
-            if (checkingAccount2.balance() != 1000) {
-                testPassed = false;
-            }
 
             // deposit
             checkingAccount2.deposit(100);
@@ -95,7 +85,7 @@ public class Application {
             // compute_interest
 
             Date interestDate = new Date();
-            interestDate.setTime(interestDate.getTime() + 1000 * 60 * 60 * 24); // add one day
+            interestDate.setTime(today.getTime() + 1000 * 60 * 60 * 25); // add one day
 
             // test w/ default openDate
             double beforeBalance = checkingAccount2.balance();
@@ -109,10 +99,10 @@ public class Application {
             }
 
             // test w/ specified openDate
-            Date firstDate = ((Date) interestDate.clone());
-            firstDate.setTime(interestDate.getTime() - 1000 * 60 * 60 * 24 * 2);
+            Date firstDate = new Date();
+            firstDate.setTime(today.getTime() - 1000 * 60 * 60 * 25);
 
-            CheckingAccount checkingAccount3 = new CheckingAccount("checkingAccount3", 1000, YEARLY_INTEREST_RATE,
+            Account checkingAccount3 = new CheckingAccount("checkingAccount3", 1000, YEARLY_INTEREST_RATE,
                     firstDate);
             double beforeBalance3 = checkingAccount3.balance();
             if (checkingAccount3.computeInterest() != beforeBalance3 * (1 + YEARLY_INTEREST_RATE / 365)) {
@@ -124,19 +114,99 @@ public class Application {
                 testPassed = false;
             }
 
+            // comprehensive test of SavingAccount
+            Account savingAccount = new SavingAccount("savingAccount", 1000, YEARLY_INTEREST_RATE, today);
+
+            // deposit
+            savingAccount.deposit(100);
+            if (savingAccount.balance() != 1100) {
+                testPassed = false;
+            }
+
+            // withdraw
+            savingAccount.withdraw(100);
+            if (savingAccount.balance() != 999) {
+                testPassed = false;
+            }
+
+            try {
+                savingAccount.withdraw(99999);
+                testPassed = false;
+            } catch (Exception e) {
+            }
+
+            // compute_interest
+            interestDate.setTime(today.getTime() + (long) (1000 * 60 * 60 * 24) * 31);
+
+            // test w/ default openDate
+            beforeBalance = savingAccount.balance();
+
+            if (beforeBalance != savingAccount.computeInterest()) {
+                testPassed = false;
+            }
+
+            if (savingAccount.computeInterest(interestDate) != beforeBalance
+                    * (1 + YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            // test w/ specified openDate
+            firstDate.setTime(today.getTime() - (long) 1000 * 60 * 60 * 24 * 31);
+            Account savingAccount2 = new SavingAccount("savingAccount2", 1000,
+                    YEARLY_INTEREST_RATE,
+                    firstDate);
+            beforeBalance = savingAccount2.balance();
+            if (savingAccount2.computeInterest() != beforeBalance * (1 +
+                    YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            if (savingAccount2.computeInterest(interestDate) != beforeBalance
+                    * (1 + YEARLY_INTEREST_RATE / 12) * (1 + YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
             /**********************/
             // comprehensive test of ...
 
-            // name
-            // balance
             // deposit
             // withdraw
+            // test minimum balance
             // compute_interest
             // test w/ default openDate
             // test w/ specified openDate
 
             // compute_interest
             /**********************/
+
+            ArrayList<Class<? extends Account>> accountClassList = new ArrayList<Class<? extends Account>>();
+            accountClassList.add(CheckingAccount.class);
+            accountClassList.add(SavingAccount.class);
+            // accountClassList.add(Account.class);
+            // accountClassList.add(Account.class);
+
+            for (Class<? extends Account> cls : accountClassList) {
+                try {
+                    Account account = cls.getDeclaredConstructor(
+                            String.class, double.class, double.class)
+                            .newInstance(
+                                    "account", 10000, YEARLY_INTEREST_RATE);
+                    // name
+                    if (account.name() != "account") {
+                        testPassed = false;
+                    }
+
+                    // balance
+                    if (account.balance() != 10000) {
+                        testPassed = false;
+                    }
+
+                } catch (Exception e) {
+                    stdExceptionPrinting(e, 167);
+                    testPassed = false;
+                    continue;
+                }
+            }
 
             /*
              * if your implementaion is correct, you can do the following with polymorphic
@@ -147,7 +217,7 @@ public class Application {
             // accountList = new Account[4];
 
             // // buid 4 different accounts in the same array
-            // accountList[0] = new CheckingAccount("John Smith", 1500.0);
+            // accountList[0] = new Account("John Smith", 1500.0);
             // accountList[1] = new SavingAccount("William Hurt", 1200.0);
             // accountList[2] = new CDAccount("Woody Allison", 1000.0);
             // accountList[3] = new LoanAccount("Judi Foster", -1500.0);
@@ -160,7 +230,7 @@ public class Application {
             // }
 
         } catch (Exception e) {
-            stdExceptionPrinting(e, 0);
+            stdExceptionPrinting(e, 195);
             testPassed = false;
         } finally {
             // simple final result
