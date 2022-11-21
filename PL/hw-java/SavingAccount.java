@@ -12,10 +12,10 @@ public class SavingAccount extends Account implements FullFunctionalAccount {
     protected Date lastTransactionDate;
     protected int freeTransQuota;
 
-    SavingAccount(String accountName_, double firstDeposit, double interestRate) throws BankingException {
+    SavingAccount(String accountName_, double firstDeposit) throws BankingException {
         accountName = accountName_;
         accountBalance = firstDeposit;
-        accountInterestRate = interestRate;
+        accountInterestRate = 0.12;
         openDate = new Date();
         lastInterestDate = openDate;
         lastTransactionDate = openDate;
@@ -33,7 +33,7 @@ public class SavingAccount extends Account implements FullFunctionalAccount {
         freeTransQuota = 3;
     }
 
-    private double getTransFee(Date transDate) {
+    protected double getTransFee(Date transDate) {
         if (freeTransQuota > 0)
             return 0;
         else

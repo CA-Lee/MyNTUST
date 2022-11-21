@@ -1,0 +1,57 @@
+Account <John Smith> now has $1400.0 balance
+
+EXCEPTION: Banking system throws a class BankingException with message: 
+        MESSAGE: Underfraft from checking account name:John Smith
+        Account balance remains $1500.0
+
+Number of days since last interest is 0
+Interest earned is 0.0
+Number of days since last interest is 1
+Interest earned is 0.3287671232876712
+Number of days since last interest is 1
+Interest earned is 0.3287671232876712
+Number of days since last interest is 1
+Interest earned is 0.32887521110902607
+Number of months since last interest is 0
+Interest earned is 0.0
+Number of months since last interest is 1
+Interest earned is 7.989999999999998
+Number of months since last interest is 1
+Interest earned is 9.999999999999998
+Number of months since last interest is 1
+Interest earned is 10.099999999999998
+Number of months since last interest is 0
+Interest earned is 0.0
+Number of months since last interest is 1
+Interest earned is 5.499999999999999
+Number of months since last interest is 1
+Interest earned is 9.999999999999998
+Number of months since last interest is 1
+Interest earned is 10.099999999999998
+Number of months since last interest is 12
+Interest earned is 120.0
+Number of months since last interest is 0
+Interest earned is -0.0
+Number of months since last interest is 1
+Interest earned is -8.999999999999998
+Number of months since last interest is 1
+Interest earned is -9.999999999999998
+Number of months since last interest is 1
+Interest earned is -10.099999999999998
+Number of days since last interest is 0
+Interest earned is 0.0
+Account <John Smith> now has $1500.0 balance
+
+Number of months since last interest is 0
+Interest earned is 0.0
+Account <William Hurt> now has $1200.0 balance
+
+Number of months since last interest is 0
+Interest earned is 0.0
+Account <Woody Allison> now has $1000.0 balance
+
+Number of months since last interest is 0
+Interest earned is -0.0
+Account <Judi Foster> now has $-1500.0 balance
+
+Test passed.

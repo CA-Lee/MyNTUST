@@ -5,8 +5,9 @@ a [label="a"];
 b [label="b"];
 c [label="c"];
 d [label="d"];
+e [label="e"];
 INIT -> a;
-a->d [label="0/0"];
+a->e [label="0/0"];
 a->d [label="1/0"];
 b->c [label="0/1"];
 b->d [label="1/0"];
@@ -14,4 +15,6 @@ c->c [label="0/0"];
 c->a [label="1/1"];
 d->b [label="0/0"];
 d->b [label="1/1"];
+e->b [label="0/0"];
+e->b [label="1/1"];
 }

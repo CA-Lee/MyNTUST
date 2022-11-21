@@ -13,10 +13,10 @@ import java.util.*;
 public class CDAccount extends Account implements WithdrawableAccount, InterestableAccount {
     protected int accountDurationDays;
 
-    CDAccount(String accountName_, double firstDeposit, double interestRate) throws BankingException {
+    CDAccount(String accountName_, double firstDeposit) throws BankingException {
         accountName = accountName_;
         accountBalance = firstDeposit;
-        accountInterestRate = interestRate;
+        accountInterestRate = 0.12;
         openDate = new Date();
         lastInterestDate = openDate;
         accountDurationDays = 365;
@@ -40,7 +40,7 @@ public class CDAccount extends Account implements WithdrawableAccount, Interesta
         if (withdrawDate.getTime() - openDate.getTime() < (long) 1000 * 60 * 60 * 24 * accountDurationDays) {
             // cost 250 fee
             if ((accountBalance - amount - 250) < 0) {
-                throw new BankingException("Underfraft from checking account name:" +
+                throw new BankingException("Underfraft from CD account name:" +
                         accountName);
             } else {
                 accountBalance -= amount + 250;
@@ -49,7 +49,7 @@ public class CDAccount extends Account implements WithdrawableAccount, Interesta
         } else {
             // fee free
             if ((accountBalance - amount) < 0) {
-                throw new BankingException("Underfraft from checking account name:" +
+                throw new BankingException("Underfraft from CD account name:" +
                         accountName);
             } else {
                 accountBalance -= amount;

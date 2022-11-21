@@ -134,8 +134,6 @@ public class Application {
                 testPassed = false;
             }
 
-            System.out.println(savingAccount.balance());
-
             try {
                 savingAccount.withdraw(99999);
                 testPassed = false;
@@ -173,7 +171,7 @@ public class Application {
                 testPassed = false;
             }
 
-            // comprehensive test of SavingAccount
+            // comprehensive test of CDAccount
             Account cDAccount = new CDAccount("cDAccount", 1000, YEARLY_INTEREST_RATE, today, 360);
 
             // deposit
@@ -241,31 +239,63 @@ public class Application {
                 testPassed = false;
             }
 
-            /**********************/
-            // comprehensive test of ...
+            // comprehensive test of LoanAccount
+            Account loanAccount = new LoanAccount("loanAccount", -1000, YEARLY_INTEREST_RATE, today);
 
             // deposit
+            loanAccount.deposit(100);
+            if (loanAccount.balance() != -900) {
+                testPassed = false;
+            }
+
             // withdraw
-            // test minimum balance
-            // compute_interest
-            // test w/ default openDate
-            // test w/ specified openDate
+            try {
+                loanAccount.withdraw(100);
+                testPassed = false;
+            } catch (Exception e) {
+            }
 
             // compute_interest
-            /**********************/
+            interestDate.setTime(today.getTime() + (long) (1000 * 60 * 60 * 24) * 31);
+
+            // test w/ default openDate
+            beforeBalance = loanAccount.balance();
+
+            if (beforeBalance != loanAccount.computeInterest()) {
+                testPassed = false;
+            }
+
+            if (loanAccount.computeInterest(interestDate) != beforeBalance
+                    * (1 + YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            // test w/ specified openDate
+            firstDate.setTime(today.getTime() - (long) 1000 * 60 * 60 * 24 * 31);
+            Account loanAccount2 = new LoanAccount("loanAccount2", -1000,
+                    YEARLY_INTEREST_RATE,
+                    firstDate);
+            beforeBalance = loanAccount2.balance();
+            if (loanAccount2.computeInterest() != beforeBalance * (1 +
+                    YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
+
+            if (loanAccount2.computeInterest(interestDate) != beforeBalance
+                    * (1 + YEARLY_INTEREST_RATE / 12) * (1 + YEARLY_INTEREST_RATE / 12)) {
+                testPassed = false;
+            }
 
             ArrayList<Class<? extends Account>> accountClassList = new ArrayList<Class<? extends Account>>();
             accountClassList.add(CheckingAccount.class);
             accountClassList.add(SavingAccount.class);
             accountClassList.add(CDAccount.class);
-            // accountClassList.add(Account.class);
+            // accountClassList.add(LoanAccount.class);
 
             for (Class<? extends Account> cls : accountClassList) {
                 try {
-                    Account account = cls.getDeclaredConstructor(
-                            String.class, double.class, double.class)
-                            .newInstance(
-                                    "account", 10000, YEARLY_INTEREST_RATE);
+                    Account account = cls.getDeclaredConstructor(String.class, double.class)
+                            .newInstance("account", 10000);
                     // name
                     if (account.name() != "account") {
                         testPassed = false;
@@ -287,22 +317,22 @@ public class Application {
              * if your implementaion is correct, you can do the following with polymorphic
              * array accountList
              */
-            // Account[] accountList;
+            Account[] accountList;
 
-            // accountList = new Account[4];
+            accountList = new Account[4];
 
-            // // buid 4 different accounts in the same array
-            // accountList[0] = new Account("John Smith", 1500.0);
-            // accountList[1] = new SavingAccount("William Hurt", 1200.0);
-            // accountList[2] = new CDAccount("Woody Allison", 1000.0);
-            // accountList[3] = new LoanAccount("Judi Foster", -1500.0);
+            // buid 4 different accounts in the same array
+            accountList[0] = new CheckingAccount("John Smith", 1500.0);
+            accountList[1] = new SavingAccount("William Hurt", 1200.0);
+            accountList[2] = new CDAccount("Woody Allison", 1000.0);
+            accountList[3] = new LoanAccount("Judi Foster", -1500.0);
 
-            // // compute interest for all accounts
-            // for (int count = 0; count < accountList.length; count++) {
-            // double newBalance = accountList[count].computeInterest();
-            // System.out.println("Account <" + accountList[count].name() + "> now has $" +
-            // newBalance + " balance\n");
-            // }
+            // compute interest for all accounts
+            for (int count = 0; count < accountList.length; count++) {
+                double newBalance = accountList[count].computeInterest();
+                System.out.println("Account <" + accountList[count].name() + "> now has $" +
+                        newBalance + " balance\n");
+            }
 
         } catch (
 

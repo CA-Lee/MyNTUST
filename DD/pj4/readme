@@ -1,0 +1,7 @@
+compile:
+
+g++ a.cpp
+
+run:
+
+./a.out KISS_IN KISS_OUT OUTPUT_DOT_FILE
