@@ -1,3 +1,4 @@
+from time import time
 import cv2 as cv
 import socket
 from loguru import logger
@@ -18,6 +19,10 @@ async def capture_video_worker(frame_buf: Queue):
             if not ret:
                 print("cap err")
                 return
+
+            # f:np.ndarray
+            # f = cv.resize(f,(180,180))
+
             await frame_buf.put(f)
             cv.imshow("server_origin", f)
             cv.imshow("server_filtered", filter_frame(f))
@@ -26,7 +31,9 @@ async def capture_video_worker(frame_buf: Queue):
     finally:
         cv.destroyAllWindows()
 
+
 async def subscriber_manager(s: socket.socket, subscribers: set):
+    last_seen = {}
     while True:
         try:
             s.recvfrom(1024, socket.MSG_PEEK | socket.MSG_DONTWAIT)
@@ -34,21 +41,34 @@ async def subscriber_manager(s: socket.socket, subscribers: set):
             if data == b"vid_req":
                 logger.info(f"Received stream request from {addr}")
                 subscribers.add(addr)
+                last_seen[addr] = time()
             elif data == b"stop":
                 logger.info(f"Received stop request from {addr}")
                 subscribers.discard(addr)
-        except:
+                s.sendto(b"ack_stop", addr)
+        except BlockingIOError:
             await sleep(1)
+        except Exception as e:
+            logger.exception(e)
+        for addr, last_t in last_seen.copy().items():
+            if time() > last_t + 15:
+                last_seen.pop(addr)
+                logger.info(f"Remove {addr} from subscriber list")
 
 
 async def stream_worker(frame_buf: Queue, subscribers: set, s: socket.socket):
     while True:
-        f = await frame_buf.get()
+        f: np.ndarray = await frame_buf.get()
         # compress frame
-        _, data = cv.imencode(".jpg", f, [cv.IMWRITE_JPEG_QUALITY,50])
+        _, data = cv.imencode(".jpg", f, [cv.IMWRITE_JPEG_QUALITY, 90])
+        # _, data = cv.imencode(".png", f)
 
-        for sub in subscribers.copy():
-            s.sendto(data, sub)
+        # print(len(data))
+        try:
+            for sub in subscribers.copy():
+                s.sendto(data, sub)
+        except Exception as e:
+            logger.exception(e)
 
         await sleep(0)
 
@@ -65,5 +85,6 @@ async def main():
         subscriber_manager(server, subscribers),
         stream_worker(frame_buf, subscribers, server),
     )
+
 
 asyncio.run(main())
